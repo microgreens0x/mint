@@ -15,7 +15,6 @@ import Loading from "./Loading/Loading";
 import Navbar from "./Navbar/Navbar";
 import MyCryptoBoys from "./MyCryptoBoys/MyCryptoBoys";
 import PunksForSale from "./PunksForSale/PunksForSale";
-import Metagascar from "./Metaverse/Metagascar";
 import BuyPunk from "./BuyPunk/BuyPunk";
 
 import {Contract} from "@ethersproject/contracts";
@@ -59,7 +58,6 @@ class App extends Component {
       lotSize: "",
       homeSize: "",
       homeUrl: "",
-      mapUrl: "",
       homeAddress: "",
     };
   }
@@ -131,8 +129,8 @@ class App extends Component {
 //        if (networkData) {
           this.setState({ loading: true });
 
-          const { abi } = require('../abis/Metagascar.json');
-          var smart_contract_interface = new web3.eth.Contract(abi, '0x7C4590ebAaC3b23B0aB81860eD28ABcBb9F848d0')
+          const { abi } = require('../abis/Surviveth.json');
+          var smart_contract_interface = new web3.eth.Contract(abi, '0xd8daecc7b7e96461ca0a68297aa01281b61ef2ed')
 
 
           const cryptoBoysContract = smart_contract_interface;
@@ -183,7 +181,7 @@ class App extends Component {
           this.setState({cryptoBoysForSale:this.state.cryptoBoysForSale});
           this.setState({punksforsalebuttonhtml:this.state.punksforsalebuttonhtml});
           this.setState({currentPage:this.state.currentPage});
-  	      this.setState({ loading: false });
+  	       this.setState({ loading: false });
 
 
 
@@ -247,10 +245,10 @@ offerPunkForSale = async (punkIndex, punkPrice) => {
 };
 claimPunk = async (punkIndex) => {
 
-  const price = window.web3.utils.toWei("0.1", "Ether");
+  const price = window.web3.utils.toWei("0.069", "Ether");
   this.setState({ loading: true });
     this.state.cryptoBoysContract.methods
-      .claim(punkIndex)
+      .mint()
       .send({ from: this.state.accountAddress, value: price })
       .on("confirmation", () => {
         localStorage.setItem(this.state.accountAddress, new Date().getTime());
@@ -274,7 +272,6 @@ punksOfferedForSale = async (punkIndex) => {
 
     const home = db[punkIndex]
     this.setState({ homeUrl: home.homeurl});
-    this.setState({ mapUrl: home.mapurl});
     this.setState({ homeAddress: home.address});
 
     let punkOwner = await this.state.cryptoBoysContract.methods
@@ -424,7 +421,6 @@ getPunkOwner = async (punkIndex) => {
                     homeSize={this.state.homeSize}
                     homeUrl={this.state.homeUrl}
                     homeAddress={this.state.homeAddress}
-                    mapUrl={this.state.mapUrl}
                     />
                   )}
               />
@@ -498,19 +494,9 @@ getPunkOwner = async (punkIndex) => {
                   )}
               />
               <Route path='/nftrade' component={() => {
-                   window.location.href = 'https://opensea.io/collection/metagascar-eth';
+                   window.location.href = 'https://opensea.io/collection/surviveth';
                    return null;
               }}/>
-
-              <Route
-                path="/vr"
-                render={() => (
-                  <Metagascar
-                    accountAddress={this.state.accountAddress}
-                    balanceOf={this.state.balanceOf}
-                  />
-                )}
-              />
 		</HashRouter>
 	  </>
         )}

@@ -6,8 +6,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { useLocation } from "react-router-dom";
 import { Link } from 'react-router-dom';
 
-
-
 import db  from "../../database";
 
 class FormAndPreview extends Component {
@@ -47,15 +45,7 @@ class FormAndPreview extends Component {
       if (newWindow) newWindow.opener = null
     }
   }
-  Load_New_URLOSM= async (e)=>{
-    var newUrl  = e.target.value;
-    if(newUrl == "Unassigned"){
-      window.alert('Home Owner Unassigned');
-    }else{
-      const newWindow = window.open(newUrl, '_blank', 'noopener,noreferrer')
-      if (newWindow) newWindow.opener = null
-    }
-  }
+
   Load_New_Image= async (e)=>{
       this.state.punkid =e.target.value;
       if (e.target.value ==undefined) {
@@ -104,22 +94,16 @@ class FormAndPreview extends Component {
     let punkid = new URLSearchParams(this.props.location.search).get( "punkid" );
     if(punkid === '' || punkid === null || punkid === undefined)punkid = "1";
     this.setState({ punkid });
-    this.props.punksOfferedForSale(punkid);
+    //this.props.punksOfferedForSale(punkid);
 
 
   };
 
   callClaimPunkFromApp = (e) => {
     e.preventDefault();
-    if(this.state.punkid < 1001){
-      window.alert('Minting Not Available for Home NO ' + this.state.punkid);
-    }else if(this.props.punkOwner != 'Unassigned'){
-      window.alert('Minting Not Available for Home NO ' + this.state.punkid);
-    }else{
       this.props.claimPunk(
         this.state.punkid
       );
-    }
   };
 
 
@@ -196,105 +180,20 @@ class FormAndPreview extends Component {
     }
     return (
       <div>
-<div class="container  m-0 p-0">
-<div class="row m-0 p-0">
-      {items}
-</div>
-<div class="row m-0 p-0">
-      {itemsHomes}
-</div>
-</div>
-<div class="container m-0 p-0">
-<div class="row m-0 p-0">
-      {itemsBottomHomes}
-</div>
-<div class="row m-0 p-0">
-      {itemsBottom}
-</div>
-</div>
 
         <div class="container">
         <div class="card col-md-12 text-center" >
                     <div class="card-body">
-    <h6 class="card-subtitle mb-2">Enter NFT NO</h6>
-    <div>
-      <input
-        required
-        type="number"
-        name="punkid"
-        id="punkid"
-        value={this.state.punkid}
-        className="form-control"
-        placeholder="Enter Home NO"
-        onChange={(e) =>
-          this.Load_New_Image(e)
-        }
-      />
-    </div>
-              <hr className="my-4" />
-<h5 class="card-title">{this.props.homeAddress}, Metagascar</h5>
-<h5 class="card-title">Home NO {this.state.punkid}</h5>
-<h5 class="card-title">{this.props.lotSize}</h5>
-<h5 class="card-title">{this.props.homeSize}</h5>
-<h5 class="card-title">{this.state.homeStyle}</h5>
-<p >Metaverse Link {this.props.homeUrl}</p>
-<p >Home Owner {this.props.punkOwner}</p>
-<p >Map Url {this.props.mapUrl}</p>
-<hr className="my-4" />
-<h5 class="card-title">Metagascar $GAS Rewards</h5>
-<hr className="my-4" />
-<p >Neighborhood {this.state.gasScore}</p>
-<p >Lot Size {this.state.gasScoreLot}</p>
-<p >Home Size {this.state.gasScoreHome}</p>
-<p >Total {this.state.gasTotal}</p>
-<p >
-  <button
-    id="mintBtn22"
-    style={{ fontSize: "0.9rem", letterSpacing: "0.14rem" }}
-    type="submit"
-    className="btn mt-4 btn-block btn-outline-primary"
-    value={this.props.homeUrl}
-    onClick={(e) =>
-      this.Load_New_URL(e)
-    }
-  >
-    Metaverse
-  </button>
-</p>
-<p >
-  <button
-    id="mintBtn22"
-    style={{ fontSize: "0.9rem", letterSpacing: "0.14rem" }}
-    type="submit"
-    className="btn mt-4 btn-block btn-outline-primary"
-    value={this.props.punkOwner}
-    onClick={(e) =>
-      this.Load_New_URLOpensea(e)
-    }
-  >
-    Opensea
-  </button>
-</p>
-<p >
-  <button
-    id="mintBtn22"
-    style={{ fontSize: "0.9rem", letterSpacing: "0.14rem" }}
-    type="submit"
-    className="btn mt-4 btn-block btn-outline-primary"
-    value={this.props.mapUrl}
-    onClick={(e) =>
-      this.Load_New_URLOSM(e)
-    }
-  >
-    Map
-  </button>
-</p>
+                    Click Mint and Accept on Metamask
 
+                    </div>
+        </div>
+        </div>
 
         <form onSubmit={this.callClaimPunkFromApp} className="pt-4 mt-1">
           <div className="row">
           <div className="col-md-12">
-            Mint Price 0.1 ETH
+            Mint Price 0.069 ETH
             <div>
               <button
                 id="mintBtn22"
@@ -308,10 +207,6 @@ class FormAndPreview extends Component {
             </div>
           </div>
         </form>
-                    </div>
-        </div>
-        </div>
-
           <hr className="my-4" />
               Metagascar &copy; 2021 Metagascar Project Inc. All rights reserved.
           <hr className="my-4" />

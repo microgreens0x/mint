@@ -8,7 +8,7 @@ const AccountDetails = ({ accountAddress, accountBalance }) => {
         <div class="card col-md-12" >
           <div class="card-body">
             <p className="lead">
-                Metagascar Contract Address : 0xf286e4955557361a7d245358b0d47a3f5c735b2e
+                Surviveth Contract Address : 0xd8daecc7b7e96461ca0a68297aa01281b61ef2ed
             </p>
           </div>
         </div>
