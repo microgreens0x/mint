@@ -247,6 +247,9 @@ offerPunkForSale = async (punkIndex, punkPrice) => {
 };
 claimPunk = async (mintcount, payamount) => {
 
+
+  window.alert('Not Available: Home Owner ' + mintcount + payamount);
+
   const price = window.web3.utils.toWei(payamount, "Ether");
   this.setState({ loading: true });
     this.state.cryptoBoysContract.methods
