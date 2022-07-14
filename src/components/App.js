@@ -243,12 +243,12 @@ offerPunkForSale = async (punkIndex, punkPrice) => {
         window.location.reload();
       });
 };
-claimPunk = async (punkIndex) => {
+claimPunk = async (mintcount, payamount) => {
 
-  const price = window.web3.utils.toWei("0.069", "Ether");
+  const price = window.web3.utils.toWei(payamount, "Ether");
   this.setState({ loading: true });
     this.state.cryptoBoysContract.methods
-      .mint()
+      .publicSaleMint(mintcount)
       .send({ from: this.state.accountAddress, value: price })
       .on("confirmation", () => {
         localStorage.setItem(this.state.accountAddress, new Date().getTime());

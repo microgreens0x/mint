@@ -22,6 +22,8 @@ class FormAndPreview extends Component {
       gasScoreHome: "",
       gasTotal: "",
       homeStyle: "",
+      mintcount: 0;,
+      payamount: "";,
     };
   }
 
@@ -47,43 +49,7 @@ class FormAndPreview extends Component {
   }
 
   Load_New_Image= async (e)=>{
-      this.state.punkid =e.target.value;
-      if (e.target.value ==undefined) {
-        this.state.punkid =e.target.id;
-      }
-//      window.alert(this.state.punkid);
-      if(this.state.punkid<1 || this.state.punkid>8000){
-        this.state.punkid = 1
-      }
-      var developedLand = 1;
-      const home = db[this.state.punkid];
 
-      if (home.homeurl != "Undeveloped"){
-          developedLand = 6;
-      }
-      var tmpLotSize = home.lotsize + "";
-      this.state.gasScoreLot = tmpLotSize.substring(9,tmpLotSize.indexOf(" Square Feet"));
-      this.state.gasScoreLot = this.state.gasScoreLot * 3;
-
-      this.state.gasScoreHome = home.homesize.substring(9,home.homesize.indexOf(" Square Feet"));
-      this.state.gasScoreHome = this.state.gasScoreHome * 2
-
-      this.state.gasScore = (8001-this.state.punkid) * 18 * developedLand;
-      this.props.punksOfferedForSale(this.state.punkid);
-
-      this.state.homeStyle = home.homestyle;
-
-      var s = this.state.punkid+"";
-      while (s.length < 4) s = "0" + s;
-
-      var newImageUrl = '/images/punks/punk-' + s + 'x8.png';
-      this.setState({
-        cryptoBunkImageURL : newImageUrl
-      })
-
-      this.state.gasTotal = this.state.gasScoreLot + this.state.gasScore  + this.state.gasScoreHome;
-      //this.state.gasScore = this.props.lotSize.substring(9, this.props.lotSize.indexOf(" Square Feet"));
-      //window.alert('Not Available: Home Owner ' + home.lotsize);
 
     }
 
@@ -102,7 +68,8 @@ class FormAndPreview extends Component {
   callClaimPunkFromApp = (e) => {
     e.preventDefault();
       this.props.claimPunk(
-        this.state.punkid
+        this.state.mintcount,
+        this.state.payamoun
       );
   };
 
@@ -195,6 +162,34 @@ class FormAndPreview extends Component {
           <div className="col-md-12">
             Mint Price 0.069 ETH
             <div>
+              <input
+                required
+                type="number"
+                name="mintcount"
+                id="mintcount"
+                value={this.state.mintcount}
+                className="form-control"
+                placeholder="Mint Count"
+                onChange={(e) =>
+                  this.Load_New_Image(e)
+                }
+              />
+            </div>
+            <div>
+              <input
+                required
+                type="number"
+                name="payamount"
+                id="payamount"
+                value={this.state.payamount}
+                className="form-control"
+                placeholder="Pay Amount ETH"
+                onChange={(e) =>
+                  this.Load_New_Image(e)
+                }
+              />
+            </div>
+            <div>
               <button
                 id="mintBtn22"
                 style={{ fontSize: "0.9rem", letterSpacing: "0.14rem" }}
@@ -208,7 +203,7 @@ class FormAndPreview extends Component {
           </div>
         </form>
           <hr className="my-4" />
-              Microgreens0x &copy; 2022, All rights reserved.
+              Microgreens0x &copy; 2022. All rights reserved.
           <hr className="my-4" />
       </div>
     );
