@@ -59,6 +59,8 @@ class App extends Component {
       homeSize: "",
       homeUrl: "",
       homeAddress: "",
+      mintcount: 0,
+      payamount: "",
     };
   }
 
@@ -421,6 +423,8 @@ getPunkOwner = async (punkIndex) => {
                     homeSize={this.state.homeSize}
                     homeUrl={this.state.homeUrl}
                     homeAddress={this.state.homeAddress}
+                    mintcount={this.state.mintcount}
+                    payamount={this.state.payamount}
                     />
                   )}
               />
