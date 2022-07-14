@@ -132,7 +132,7 @@ class App extends Component {
           this.setState({ loading: true });
 
           const { abi } = require('../abis/Microgreens0x.json');
-          var smart_contract_interface = new web3.eth.Contract(abi, '0x7C4590ebAaC3b23B0aB81860eD28ABcBb9F848d0')
+          var smart_contract_interface = new web3.eth.Contract(abi, '0x81Bef71a56BfB754A99EfDD11b740b7920421d33')
 
 
           const cryptoBoysContract = smart_contract_interface;
