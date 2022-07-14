@@ -22,8 +22,8 @@ class FormAndPreview extends Component {
       gasScoreHome: "",
       gasTotal: "",
       homeStyle: "",
-      mintcount: 0;,
-      payamount: "";,
+      mintcount: 0,
+      payamount: "",
     };
   }
 
@@ -69,7 +69,7 @@ class FormAndPreview extends Component {
     e.preventDefault();
       this.props.claimPunk(
         this.state.mintcount,
-        this.state.payamoun
+        this.state.payamount
       );
   };
 
