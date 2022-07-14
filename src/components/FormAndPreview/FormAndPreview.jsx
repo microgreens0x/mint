@@ -189,7 +189,6 @@ class FormAndPreview extends Component {
                 type="text"
                 name="payamount"
                 id="payamount"
-                value={this.state.payamount}
                 className="form-control"
                 placeholder="Pay Amount ETH"
                 onChange={(e) =>
