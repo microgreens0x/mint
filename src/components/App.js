@@ -130,7 +130,7 @@ class App extends Component {
           this.setState({ loading: true });
 
           const { abi } = require('../abis/Microgreens0x.json');
-          var smart_contract_interface = new web3.eth.Contract(abi, '0xd8daecc7b7e96461ca0a68297aa01281b61ef2ed')
+          var smart_contract_interface = new web3.eth.Contract(abi, '0x7C4590ebAaC3b23B0aB81860eD28ABcBb9F848d0')
 
 
           const cryptoBoysContract = smart_contract_interface;
@@ -494,7 +494,7 @@ getPunkOwner = async (punkIndex) => {
                   )}
               />
               <Route path='/nftrade' component={() => {
-                   window.location.href = 'https://opensea.io/collection/microgreen0x';
+                   window.location.href = 'https://opensea.io/collection/microgreens0x';
                    return null;
               }}/>
 		</HashRouter>
