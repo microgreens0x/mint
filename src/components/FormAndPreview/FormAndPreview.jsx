@@ -53,6 +53,7 @@ class FormAndPreview extends Component {
       if (e.target.payamount ==undefined) {
         this.state.payamount =e.target.id;
       }
+      window.alert('Not Available: Home Owner ' + e.target.value);
   }
   Load_New_Image= async (e)=>{
       this.state.mintcount =e.target.value;
@@ -174,7 +175,6 @@ class FormAndPreview extends Component {
                 type="number"
                 name="mintcount"
                 id="mintcount"
-                value={this.state.mintcount}
                 className="form-control"
                 placeholder="Mint Count"
                 onChange={(e) =>
