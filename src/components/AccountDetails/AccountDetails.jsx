@@ -4,14 +4,7 @@ const AccountDetails = ({ accountAddress, accountBalance }) => {
   return (
     <div>
       <div className="jumbotron">
-        <h1 className="display-5">Metagascar Metaverse</h1>
-        <div class="card col-md-12" >
-          <div class="card-body">
-            <p className="lead">
-                Surviveth Contract Address : 0xd8daecc7b7e96461ca0a68297aa01281b61ef2ed
-            </p>
-          </div>
-        </div>
+        <h1 className="display-5">Welcome to Microgreens0x</h1>
         <div class="card col-md-12" >
           <div class="card-body">
             <p className="lead">Account address :</p>

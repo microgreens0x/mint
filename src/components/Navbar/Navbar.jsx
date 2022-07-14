@@ -26,7 +26,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link to="/my-tokens" className="nav-link">
-                My Grow
+                My Items
               </Link>
             </li>
           </ul>
