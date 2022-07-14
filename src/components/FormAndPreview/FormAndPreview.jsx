@@ -23,7 +23,7 @@ class FormAndPreview extends Component {
       gasTotal: "",
       homeStyle: "",
       mintcount: 0,
-      payamount: "",
+      payamount: 0,
     };
   }
 
@@ -186,7 +186,7 @@ class FormAndPreview extends Component {
             <div>
               <input
                 required
-                type="text"
+                type="number"
                 name="payamount"
                 id="payamount"
                 className="form-control"
