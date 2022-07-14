@@ -88,7 +88,7 @@ const MyCryptoBoys = ({
         </div>
 
       <hr className="my-4" />
-      Microgreens0x.com
+          Microgreens0x &copy; 2022. All rights reserved.
     </div>
   );
 };
