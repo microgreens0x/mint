@@ -60,7 +60,7 @@ class App extends Component {
       homeUrl: "",
       homeAddress: "",
       mintcount: 0,
-      payamount: "",
+      payamount: 0,
     };
   }
 
