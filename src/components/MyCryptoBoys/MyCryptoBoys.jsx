@@ -71,14 +71,14 @@ const MyCryptoBoys = ({
       <div className="card mt-1">
         <div className="card-body align-items-center d-flex justify-content-center">
           <h5>
-            Total No. of Metagascar Surviveth Contestant(s) Minted {totalTokensOwnedByAccount} / 10000
+            Total No. of Microgreens0x Items(s) Minted {totalTokensOwnedByAccount} / 10000
           </h5>
         </div>
       </div>
       <hr className="my-4" />
       <div class="card col-md-12 text-center">
         <div class="card-body">
-          <h5 class="card-title">You Own {balanceOf} Contestant(s)</h5>
+          <h5 class="card-title">You Own {balanceOf} Items(s)</h5>
         </div>
       </div>
         <div class="container">
@@ -88,7 +88,7 @@ const MyCryptoBoys = ({
         </div>
 
       <hr className="my-4" />
-      Metagascar.com
+      Microgreens0x.com
     </div>
   );
 };

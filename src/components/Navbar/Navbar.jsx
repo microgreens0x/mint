@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
       <div className="container">
         <Link to="/" className="navbar-brand ml-2">
-          Metagascar
+          Microgreens0x
         </Link>
         <div id="navbar" className="navbar">
           <ul
@@ -16,7 +16,7 @@ const Navbar = () => {
           >
             <li className="nav-item">
               <Link to="/mint" className="nav-link">
-                Mint Survivor
+                Mint
               </Link>
             </li>
             <li className="nav-item">
@@ -26,7 +26,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link to="/my-tokens" className="nav-link">
-                My Survivors
+                My Grow
               </Link>
             </li>
           </ul>
