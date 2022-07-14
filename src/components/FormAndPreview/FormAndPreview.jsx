@@ -50,9 +50,15 @@ class FormAndPreview extends Component {
 
   Load_New_Image_Amount= async (e)=>{
       this.state.payamount =e.target.value;
+      if (e.target.payamount ==undefined) {
+        this.state.payamount =e.target.id;
+      }
   }
   Load_New_Image= async (e)=>{
       this.state.mintcount =e.target.value;
+      if (e.target.mintcount ==undefined) {
+        this.state.mintcount =e.target.id;
+      }
     }
   componentDidMount = async () => {
 
