@@ -181,7 +181,7 @@ class FormAndPreview extends Component {
               <input
                 required
                 type="number"
-                step="0.02"
+                step="0.002"
                 name="payamount"
                 id="payamount"
                 className="form-control"
