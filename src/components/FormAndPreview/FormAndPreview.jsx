@@ -48,11 +48,12 @@ class FormAndPreview extends Component {
     }
   }
 
+  Load_New_Image_Amount= async (e)=>{
+      this.state.payamount =e.target.value;
+  }
   Load_New_Image= async (e)=>{
-
-
+      this.state.mintcount =e.target.value;
     }
-
   componentDidMount = async () => {
 
     window.scrollTo(0, 0);
@@ -175,20 +176,22 @@ class FormAndPreview extends Component {
                 }
               />
             </div>
+              <hr className="my-2" />
             <div>
               <input
                 required
-                type="number"
+                type="text"
                 name="payamount"
                 id="payamount"
                 value={this.state.payamount}
                 className="form-control"
                 placeholder="Pay Amount ETH"
                 onChange={(e) =>
-                  this.Load_New_Image(e)
+                  this.Load_New_Image_Amount(e)
                 }
               />
             </div>
+              <hr className="my-2" />
             <div>
               <button
                 id="mintBtn22"
