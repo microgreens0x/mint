@@ -74,7 +74,7 @@ class FormAndPreview extends Component {
 
   };
 
-  callClaimPunkFromApp = (e) => {
+callClaimPunkFromApp = (e) => {
   window.alert('Not Available: Home Owner ' + this.state.mintcount + this.state.payamount);
     e.preventDefault();
       this.props.claimPunk(
@@ -83,6 +83,14 @@ class FormAndPreview extends Component {
       );
   };
 
+  callClaimPunkFromAppwl = (e) => {
+    let mintPrice = document.getElementById('mintamountwl').value;
+    window.alert('Not Available: Home Owner ' + this.state.mintcount + this.state.payamount);
+      e.preventDefault();
+        this.props.claimPunkwl(
+          mintPrice
+        );
+    };
 
 
 
@@ -161,12 +169,47 @@ class FormAndPreview extends Component {
                 type="submit"
                 className="btn mt-4 btn-block btn-outline-primary"
               >
-                Mint
+                Public Mint
               </button>
               </div>
             </div>
           </div>
         </form>
+          <hr className="my-4" />
+          <form onSubmit={this.callClaimPunkFromAppwl} className="pt-4 mt-1">
+            <div className="row">
+            <div className="col-md-12">
+              Mint Price 0.069 ETH
+
+                <hr className="my-2" />
+              <div>
+                <input
+                  required
+                  type="number"
+                  name="mintamountwl"
+                  value="0.001"
+                  id="mintamount"
+                  className="form-control"
+                  placeholder="Pay Amount"
+                />
+
+              </div>
+
+
+                <hr className="my-2" />
+              <div>
+                <button
+                  id="mintBtn22"
+                  style={{ fontSize: "0.9rem", letterSpacing: "0.14rem" }}
+                  type="submit"
+                  className="btn mt-4 btn-block btn-outline-primary"
+                >
+                  Whitelist Mint
+                </button>
+                </div>
+              </div>
+            </div>
+          </form>
           <hr className="my-4" />
               Microgreens0x &copy; 2022. All rights reserved.
           <hr className="my-4" />

@@ -246,10 +246,7 @@ offerPunkForSale = async (punkIndex, punkPrice) => {
       });
 };
 claimPunk = async (mintcount, payamount) => {
-
-
   window.alert('Not Available: Home Owner ' + mintcount + payamount);
-
   const price = window.web3.utils.toWei(payamount, "Ether");
   this.setState({ loading: true });
     this.state.cryptoBoysContract.methods
@@ -261,6 +258,20 @@ claimPunk = async (mintcount, payamount) => {
         window.location.reload();
       });
 };
+claimPunkwl = async (payamount) => {
+  window.alert('Not Available: Home Owner ' + mintcount + payamount);
+  const price = window.web3.utils.toWei(payamount, "Ether");
+  this.setState({ loading: true });
+    this.state.cryptoBoysContract.methods
+      .allowlistMint()
+      .send({ from: this.state.accountAddress, value: price })
+      .on("confirmation", () => {
+        localStorage.setItem(this.state.accountAddress, new Date().getTime());
+        this.setState({ loading: false });
+        window.location.reload();
+      });
+};
+
 punksOfferedForSale = async (punkIndex) => {
 
     this.setState({ punkOwner: "Unassigned"});
@@ -428,6 +439,7 @@ getPunkOwner = async (punkIndex) => {
                     homeAddress={this.state.homeAddress}
                     mintcount={this.state.mintcount}
                     payamount={this.state.payamount}
+                    claimPunkwl={this.claimPunkwl}
                     />
                   )}
               />
