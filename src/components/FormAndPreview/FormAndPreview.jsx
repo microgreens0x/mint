@@ -55,6 +55,9 @@ class FormAndPreview extends Component {
 
       window.alert('Not Available: Home Owner ' + this.state.mintcount + this.state.payamount);
       this.setState({
+        mintcount : e.target.value
+      })
+      this.setState({
         payamount : this.state.payamount
       })
   }
