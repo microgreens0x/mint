@@ -53,6 +53,7 @@ class FormAndPreview extends Component {
   }
   Load_New_Image= async (e)=>{
       this.state.mintcount =e.target.value;
+      this.state.payamount  = e.target.value * 0.02;
     }
   componentDidMount = async () => {
 
@@ -88,65 +89,6 @@ class FormAndPreview extends Component {
     const itemsBottomHomes = []
     const itemsBottom = []
 
-    let startHouse = Math.floor(this.state.punkid/20);
-
-    if(this.state.punkid%20 >1){
-
-    }
-
-    if (startHouse==0 )startHouse=0;
-    else if(this.state.punkid%20 ==0 ){
-      startHouse = startHouse-1;
-      startHouse = (startHouse * 20);
-    }
-    else startHouse = (startHouse * 20);
-
-
-    let houseNumber = 1;
-    for (let j = startHouse; j< (startHouse+10).valueOf(); j++) {
-        let nftNumber = (startHouse + houseNumber).valueOf();
-        const home = db[nftNumber];
-        var metalandImag = '/images/metaLand.north.' + home.drivewayStyle.replaceAll(" ", "") + '.png';
-        var title = 'Lot Size ' + home.lotsize;
-        var divClass = 'col-sm m-0 p-0 bottom bg-primary text-center';
-        if(nftNumber ==this.state.punkid )divClass = 'col-sm m-0 p-0 bottom bg-primary bg-secondary text-white text-center';
-        items.push(<div class={divClass} ><small>NFT NO {nftNumber} <hr className="my-1" /> {home.address} </small></div>)
-        houseNumber +=1;
-    }
-    houseNumber = 1;
-    for (let j = startHouse; j< (startHouse+10).valueOf(); j++) {
-
-        let nftNumber = (startHouse + houseNumber).valueOf();
-        var newLinkUrl = '/mint?punkid=' + nftNumber;
-        const home = db[nftNumber];
-        var metalandImag = '/images/metaLand.north.' + home.drivewayStyle.replaceAll(" ", "") + '.png';
-        var title = 'Lot Size ' + home.lotsize;
-        itemsHomes.push(<div class="col-sm m-0 p-0 bottom" ><img width="100%" src={metalandImag} title={title} id={nftNumber} value={nftNumber} onClick={this.Load_New_Image} /></div>)
-        houseNumber +=1;
-    }
-    houseNumber = 11;
-    for (let j = startHouse+10; j< (startHouse+20).valueOf(); j++) {
-        let nftNumber = (startHouse + houseNumber).valueOf();
-        const home = db[nftNumber];
-        var metalandImag = '/images/metaLand.south.' + home.drivewayStyle.replaceAll(" ", "") + '.png';
-        var title = 'Lot Size ' + home.lotsize;
-        var divClass = 'col-sm m-0 p-0 bottom bg-primary text-center';
-        if(nftNumber ==this.state.punkid )divClass = 'col-sm m-0 p-0 bottom bg-primary bg-secondary text-white text-center';
-        itemsBottomHomes.push(<div class={divClass} ><img width="100%" src={metalandImag} title={title} id={nftNumber} value={nftNumber} onClick={this.Load_New_Image} /> <small><hr className="my-1" /> {home.address} </small></div>)
-        houseNumber +=1;
-    }
-
-    houseNumber = 11;
-    for (let j = startHouse+10; j< (startHouse+20).valueOf(); j++) {
-        let nftNumber = (startHouse + houseNumber).valueOf();
-        const home = db[nftNumber];
-        var metalandImag = '/images/metaLand.south.' + home.drivewayStyle.replaceAll(" ", "") + '.png';
-        var title = 'Lot Size ' + home.lotsize;
-        var divClass = 'col-sm m-0 p-0 bottom bg-primary text-center';
-        if(nftNumber ==this.state.punkid )divClass = 'col-sm m-0 p-0 bottom bg-primary bg-secondary text-white text-center';
-        itemsBottom.push(<div class={divClass} ><hr className="my-1" /> <small>NFT {nftNumber} </small></div>)
-        houseNumber +=1;
-    }
     return (
       <div>
 
@@ -180,9 +122,11 @@ class FormAndPreview extends Component {
             <div>
               <input
                 required
+                readonly
                 type="number"
                 step="0.002"
                 name="payamount"
+                value={this.state.payamount}
                 id="payamount"
                 className="form-control"
                 placeholder="Pay Amount ETH"
