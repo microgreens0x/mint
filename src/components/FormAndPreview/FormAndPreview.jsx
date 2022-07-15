@@ -50,8 +50,9 @@ class FormAndPreview extends Component {
 
   Load_New_Image= async (e)=>{
       window.alert('Not Available: Home Owner ' + this.state.mintcount + this.state.payamount);
+      let mintPrice = 0.002;
       this.state.mintcount =e.target.value;
-      this.state.payamount  = e.target.value * parseFloat("0.02");
+      this.state.payamount  = e.target.value * mintPrice;
 
       window.alert('Not Available: Home Owner ' + this.state.mintcount + this.state.payamount);
       this.setState({
@@ -74,7 +75,7 @@ class FormAndPreview extends Component {
   };
 
   callClaimPunkFromApp = (e) => {
-  window.alert('Not Available: Home Owner ' + this.state.mintcount + this.state.payamount);
+  window.alert('Not Available: Home Owner ' + this.state.mintcount + this.state.mintcount);
     e.preventDefault();
       this.props.claimPunk(
         this.state.mintcount,
