@@ -50,8 +50,10 @@ class FormAndPreview extends Component {
 
   Load_New_Image= async (e)=>{
       this.state.mintcount =e.target.value;
-      this.state.payamount  = e.target.value * 0.02;
-    }
+      this.state.payamount  = e.target.value * 0.02f;
+
+      window.alert('Not Available: Home Owner ' + this.state.mintcount + this.state.payamount);
+  }
   componentDidMount = async () => {
 
     window.scrollTo(0, 0);
