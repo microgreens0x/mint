@@ -54,6 +54,9 @@ class FormAndPreview extends Component {
       this.state.payamount  = e.target.value * parseFloat("0.02");
 
       window.alert('Not Available: Home Owner ' + this.state.mintcount + this.state.payamount);
+      this.setState({
+        payamount : this.state.payamount
+      })
   }
   componentDidMount = async () => {
 
@@ -113,7 +116,7 @@ class FormAndPreview extends Component {
                 id="mintcount"
                 className="form-control"
                 placeholder="Mint Count"
-                onChange={(e) =>
+                onKeyPress={(e) =>
                   this.Load_New_Image(e)
                 }
               />
