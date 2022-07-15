@@ -127,7 +127,6 @@ class FormAndPreview extends Component {
             </div>
               <hr className="my-2" />
             <div>
-            <div>
               <input
                 required
                 type="number"
@@ -140,6 +139,7 @@ class FormAndPreview extends Component {
 
             </div>
               {this.state.payamount}
+
               <hr className="my-2" />
             <div>
               <button
