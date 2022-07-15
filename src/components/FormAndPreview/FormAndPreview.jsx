@@ -50,7 +50,7 @@ class FormAndPreview extends Component {
 
   Load_New_Image= async (e)=>{
       window.alert('Not Available: Home Owner ' + this.state.mintcount + this.state.payamount);
-      let mintPrice = 0.002;
+      let mintPrice = document.getElementById('mintamount').value;
       this.state.mintcount =e.target.value;
       this.state.payamount  = e.target.value * mintPrice;
 
@@ -127,8 +127,19 @@ class FormAndPreview extends Component {
             </div>
               <hr className="my-2" />
             <div>
-             {this.state.payamount}
+            <div>
+              <input
+                required
+                type="number"
+                name="mintamount"
+                value="0.002"
+                id="mintamount"
+                className="form-control"
+                placeholder="Pay Amount"
+              />
+
             </div>
+              {this.state.payamount}
               <hr className="my-2" />
             <div>
               <button
