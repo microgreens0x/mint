@@ -119,7 +119,7 @@ callClaimPunkFromApp = (e) => {
         <form onSubmit={this.callClaimPunkFromApp} className="pt-4 mt-1">
           <div className="row">
           <div className="col-md-12">
-            Mint Price 0.069 ETH
+            Mint Price 0.06 ETH
             <div>
               <input
                 required
@@ -139,7 +139,7 @@ callClaimPunkFromApp = (e) => {
                 required
                 type="number"
                 name="mintamount"
-                value="0.002"
+                value="0.06"
                 id="mintamount"
                 className="form-control"
                 placeholder="Pay Amount"
@@ -179,7 +179,7 @@ callClaimPunkFromApp = (e) => {
           <form onSubmit={this.callClaimPunkFromAppwl} className="pt-4 mt-1">
             <div className="row">
             <div className="col-md-12">
-              Mint Price 0.069 ETH
+              Mint Price 0.02 ETH
 
                 <hr className="my-2" />
               <div>
@@ -187,7 +187,7 @@ callClaimPunkFromApp = (e) => {
                   required
                   type="number"
                   name="mintamountwl"
-                  value="0.001"
+                  value="0.02"
                   id="mintamountwl"
                   className="form-control"
                   placeholder="Pay Amount"
