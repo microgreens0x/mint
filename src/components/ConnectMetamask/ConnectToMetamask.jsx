@@ -44,10 +44,10 @@ const ConnectToMetamask = ({ connectToMetamask }) => {
     <div>
       <div className="jumbotron">
         <h1 className="display-5">
-          The Surviveth Game
+          Microgreens0x
         </h1>
         <hr className="my-4" />
-        <a href="https://opensea.io/collection/thebingogame" ><img class="img-fluid" src="/images/main.logo.png" /></a>
+        <a href="https://opensea.io/collection/microgreens0x" ><img class="img-fluid" src="/images/main.logo.png" /></a>
 
         <hr className="my-4" />
         <button
@@ -61,7 +61,7 @@ const ConnectToMetamask = ({ connectToMetamask }) => {
 
       <div className="container">
         <hr className="my-4" />
-            Metagascar &copy; 2021 Metagascar Project Inc. All rights reserved.
+            Microgreens0x &copy; 2022 Microgreens0x Project All rights reserved.
         <hr className="my-4" />
       </div>
     </div>
