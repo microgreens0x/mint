@@ -75,11 +75,11 @@ class FormAndPreview extends Component {
   };
 
   callClaimPunkFromApp = (e) => {
-  window.alert('Not Available: Home Owner ' + this.state.mintcount + this.state.mintcount);
+  window.alert('Not Available: Home Owner ' + this.state.mintcount + this.state.payamount);
     e.preventDefault();
       this.props.claimPunk(
         this.state.mintcount,
-        this.state.payamount
+        this.state.payamount.toString()
       );
   };
 
@@ -138,7 +138,20 @@ class FormAndPreview extends Component {
               />
 
             </div>
-              {this.state.payamount}
+              <hr className="my-2" />
+            <div>
+              <input
+                required
+                type="number"
+                name="payamount"
+                value={this.state.payamount}
+                id="payamount"
+                className="form-control"
+                placeholder="Pay Amount"
+              />
+
+            </div>
+
 
               <hr className="my-2" />
             <div>
