@@ -126,7 +126,7 @@ class FormAndPreview extends Component {
                 type="number"
                 step="0.002"
                 name="payamount"
-                value={this.state.payamount}
+                value={this.props.payamount}
                 id="payamount"
                 className="form-control"
                 placeholder="Pay Amount ETH"
