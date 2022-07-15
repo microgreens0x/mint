@@ -49,8 +49,9 @@ class FormAndPreview extends Component {
   }
 
   Load_New_Image= async (e)=>{
+      window.alert('Not Available: Home Owner ' + this.state.mintcount + this.state.payamount);
       this.state.mintcount =e.target.value;
-      this.state.payamount  = e.target.value * 0.02f;
+      this.state.payamount  = e.target.value * parseFloat("0.02");
 
       window.alert('Not Available: Home Owner ' + this.state.mintcount + this.state.payamount);
   }
