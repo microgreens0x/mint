@@ -49,12 +49,9 @@ class FormAndPreview extends Component {
   }
 
   Load_New_Image= async (e)=>{
-      window.alert('Not Available: Home Owner ' + this.state.mintcount + this.state.payamount);
       let mintPrice = document.getElementById('mintamount').value;
       this.state.mintcount =e.target.value;
       this.state.payamount  = e.target.value * mintPrice;
-
-      window.alert('Not Available: Home Owner ' + this.state.mintcount + this.state.payamount);
       this.setState({
         mintcount : e.target.value
       })
@@ -75,7 +72,6 @@ class FormAndPreview extends Component {
   };
 
 callClaimPunkFromApp = (e) => {
-  window.alert('Not Available: Home Owner ' + this.state.mintcount + this.state.payamount);
     e.preventDefault();
       this.props.claimPunk(
         this.state.mintcount,
@@ -85,7 +81,6 @@ callClaimPunkFromApp = (e) => {
 
   callClaimPunkFromAppwl = (e) => {
     let mintPrice = document.getElementById('mintamountwl').value;
-    window.alert('Not Available: Home Owner ' + this.state.mintcount + this.state.payamount);
       e.preventDefault();
         this.props.claimPunkwl(
           mintPrice
