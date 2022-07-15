@@ -119,7 +119,7 @@ class FormAndPreview extends Component {
                 id="mintcount"
                 className="form-control"
                 placeholder="Mint Count"
-                onkeyup={(e) =>
+                onChange={(e) =>
                   this.Load_New_Image(e)
                 }
               />
