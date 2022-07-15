@@ -188,7 +188,7 @@ callClaimPunkFromApp = (e) => {
                   type="number"
                   name="mintamountwl"
                   value="0.001"
-                  id="mintamount"
+                  id="mintamountwl"
                   className="form-control"
                   placeholder="Pay Amount"
                 />
