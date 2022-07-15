@@ -74,7 +74,7 @@ class FormAndPreview extends Component {
   };
 
   callClaimPunkFromApp = (e) => {
-  window.alert('Not Available: Home Owner ' + this.state.mintcount);
+  window.alert('Not Available: Home Owner ' + this.state.mintcount + this.state.payamount);
     e.preventDefault();
       this.props.claimPunk(
         this.state.mintcount,
