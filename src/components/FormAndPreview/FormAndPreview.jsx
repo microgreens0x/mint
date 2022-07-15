@@ -48,9 +48,6 @@ class FormAndPreview extends Component {
     }
   }
 
-  Load_New_Image_Amount= async (e)=>{
-      this.state.payamount =e.target.value;
-  }
   Load_New_Image= async (e)=>{
       this.state.mintcount =e.target.value;
       this.state.payamount  = e.target.value * 0.02;
@@ -120,20 +117,7 @@ class FormAndPreview extends Component {
             </div>
               <hr className="my-2" />
             <div>
-              <input
-                required
-                readonly
-                type="number"
-                step="0.002"
-                name="payamount"
-                value={this.props.payamount}
-                id="payamount"
-                className="form-control"
-                placeholder="Pay Amount ETH"
-                onChange={(e) =>
-                  this.Load_New_Image_Amount(e)
-                }
-              />
+             {this.state.payamount}
             </div>
               <hr className="my-2" />
             <div>
